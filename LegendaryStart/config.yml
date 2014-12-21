@@ -1,0 +1,19 @@
+#Allows the player to only receive one item when he/she logs in for the first time
+OneTimeLogin: true
+#Sets the name of the inventory that the player sees
+InventoryName: c1Login Bonus
+#Sets the name of the random inventory that the player sees
+RandomInventoryName: c1Login Bonus [random]
+#sets the random inventorys random setting to random or sudo-random | random: uses java based random object to get a random item from the set
+#                                                                   | sudo-random: gives the user the item at the time of the click event
+RandomInventorySetting: sudo-random
+#continually asks you to chose an item every time you login until you have done so if OneTimeLogin is true
+PersistantLogin: false
+#allows the player to choose this many number of items cant be zero
+numberOfitems: 3
+#Allows the user to browse all the sets before choosing
+browseSets: true
+#Displays a message when you login
+LoginMessage: true
+#Auto opens the inventory if it is your first time logging in
+AutoOpen: true

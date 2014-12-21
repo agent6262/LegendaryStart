@@ -1,0 +1,34 @@
+name: LengendaryStart
+version: 1.6.0
+author: Tyler Bucher
+main: com.gmail.tylerb318.LegendaryStart
+
+commands:
+  legendarystartreload:
+    description: Reload all configuration files for Legendary Start.
+    usage: 'Usage: /<command>'
+    permission: ls.reload
+    aliases: [lsreload, lsr]
+  legendarystartmenu:
+    description: Opens the login inventory if you havent chosen an item yet.
+    usage: 'Usage: /<command> | /<command> random'
+    aliases: [lsmenu, lsm]
+
+permissions:
+  ls.*:
+    description: Gives access to all Legendary Start commands and menus.
+    children:
+      ls.reload: true
+      ls.menu.original: true
+      ls.menu.random: true
+    default: op
+  ls.reload:
+    description: Gives you access to rload all of the configurations.
+    default: op
+  ls.menu.original:
+    description: Gives you access to view the original login inventory.
+    default: true
+  ls.menu.random:
+    description: Gives you access to view the random login inventory.
+    default: true
+    
