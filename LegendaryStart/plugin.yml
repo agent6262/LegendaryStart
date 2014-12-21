@@ -1,0 +1,31 @@
+name: LengendaryStart
+version: 2.0.0
+author: Tyler Bucher
+main: com.gmail.tylerb318.LegendaryStart
+
+commands:
+  legendarystartreload:
+    description: Reload all configuration files for Legendary Start.
+    usage: 'Usage: /<command>'
+    permission: ls.reload
+    aliases: [lsreload, lsr]
+  legendarystartclaim:
+    description: Opens the claim item inventory.
+    usage: 'Usage: /<command>'
+    permission: ls
+    aliases: [lsclaim, lsc]
+
+permissions:
+  ls.*:
+    description: Gives access to all Legendary Start commands and menus.
+    children:
+      ls.reload: true
+      ls: true
+    default: op
+  ls.reload:
+    description: Gives you access to reload all of the configurations.
+    default: op
+  ls:
+    description: Gives you access to view the original login inventory.
+    default: true
+    

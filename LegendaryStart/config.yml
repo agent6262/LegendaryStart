@@ -1,0 +1,8 @@
+#Sets the name of the inventory that the player sees
+InventoryName: '&1Login Bonus'
+#The amount of items the player will receive. Must be less than 54!!!
+NumberOfItems: 3
+#Displays a message when you login
+LoginMessage: true
+#How to wait until the player can get a new item. The time is in milliseconds. 24 hours = 86400000 milliseconds.
+LoginDelay: 86400000
