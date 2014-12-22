@@ -54,15 +54,16 @@ public class LSClaimCommand implements CommandExecutor {
                 if(systemTime-playerTime>=mainClass.config.getInt("LoginDelay")){
                     // Inventory sizes
                     int amountOfSets = LegendaryInventory.getInventoryArray().size();
-                    int setSize = LegendaryInventory.getInventoryArray().get(new Random().nextInt(amountOfSets-1)).size();
                     // Create the new item and inventory
                     ArrayList<ItemStack> itemsToGet = new ArrayList<>();
                     for(int i=0; i<mainClass.config.getInt("NumberOfItems");i++) {
-                        itemsToGet.add(LegendaryInventory.getInventoryArray().get(new Random().nextInt(amountOfSets-1)).get(new Random().nextInt(setSize-1)));
+                        int randSet = new Random().nextInt(amountOfSets-1);
+                        int randSetSize = LegendaryInventory.getInventoryArray().get(randSet).size();
+                        itemsToGet.add(LegendaryInventory.getInventoryArray().get(randSet).get(new Random().nextInt(randSetSize-1)));
                     }
                     final Inventory rewardInventory = Bukkit.createInventory(player, (int) (Math.ceil(itemsToGet.size()/9.0)*9.0), ChatColor.translateAlternateColorCodes('&', mainClass.config.getString("InventoryName")));
                     for(int i=0; i<itemsToGet.size();i++) {
-                        rewardInventory.setItem(i+1, itemsToGet.get(i));
+                        rewardInventory.setItem(i, itemsToGet.get(i));
                     }
                     // open inventory
                     mainClass.getServer().getScheduler().scheduleSyncDelayedTask(mainClass,
